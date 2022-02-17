@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyCatalogMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFo-NB-7Fi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5u-hP-Nfm" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="87" y="68" width="240" height="114"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="HomeAnimation"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="w5u-hP-Nfm" firstAttribute="leading" secondItem="UFo-NB-7Fi" secondAttribute="leading" constant="87" id="Kmf-ln-0Ku"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="NJn-4a-Ffk"/>
+                                    <constraint firstAttribute="height" constant="250" id="VTK-RO-b3g"/>
+                                    <constraint firstAttribute="trailing" secondItem="w5u-hP-Nfm" secondAttribute="trailing" constant="87" id="cXS-pF-E6L"/>
+                                    <constraint firstItem="w5u-hP-Nfm" firstAttribute="top" secondItem="UFo-NB-7Fi" secondAttribute="top" constant="68" id="dmz-dq-bIw"/>
+                                    <constraint firstAttribute="bottom" secondItem="w5u-hP-Nfm" secondAttribute="bottom" constant="68" id="iyN-xU-DMD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT5-Cj-g2n">
+                                <rect key="frame" x="31" y="275" width="147" height="22"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-Nc-X55">
+                                <rect key="frame" x="0.0" y="317" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="hh0-Hj-5qF"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RT5-Cj-g2n" firstAttribute="top" secondItem="UFo-NB-7Fi" secondAttribute="bottom" constant="25" id="27g-FH-Qms"/>
+                            <constraint firstItem="uTY-Nc-X55" firstAttribute="top" secondItem="RT5-Cj-g2n" secondAttribute="bottom" constant="20" id="Cf8-O4-dUV"/>
+                            <constraint firstItem="UFo-NB-7Fi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KRM-9C-D8L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uTY-Nc-X55" secondAttribute="trailing" id="PvJ-gS-tFh"/>
+                            <constraint firstItem="uTY-Nc-X55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W7R-ck-eGS"/>
+                            <constraint firstItem="UFo-NB-7Fi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YY4-rm-Uhf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RT5-Cj-g2n" secondAttribute="trailing" constant="236" id="dhW-Ce-A2O"/>
+                            <constraint firstItem="RT5-Cj-g2n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="l2m-Yg-Tzu"/>
+                            <constraint firstItem="UFo-NB-7Fi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nQm-mm-tdb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="w5u-hP-Nfm" id="tC3-fn-yNz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="w5u-hP-Nfm"/>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
