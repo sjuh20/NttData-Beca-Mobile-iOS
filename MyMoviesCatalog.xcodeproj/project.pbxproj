@@ -80,27 +80,17 @@
 		B9279CBA27C30FCD003317A0 /* MyMoviesCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				B9279CDE27C3DD2D003317A0 /* Delegate */,
+				B9279CDD27C3DCF4003317A0 /* Controller */,
+				B9279CDC27C3DCEB003317A0 /* View */,
 				B9279CD927C3C343003317A0 /* Extensions */,
 				B9279CD627C3C078003317A0 /* Model */,
-				B9279CCF27C32191003317A0 /* Movie */,
-				B9279CBB27C30FCD003317A0 /* AppDelegate.swift */,
-				B9279CBD27C30FCD003317A0 /* SceneDelegate.swift */,
-				B9279CBF27C30FCD003317A0 /* ViewController.swift */,
-				B9279CD427C34984003317A0 /* DetailViewController.swift */,
-				B9279CC127C30FCD003317A0 /* Main.storyboard */,
 				B9279CC427C30FD1003317A0 /* Assets.xcassets */,
 				B9279CC627C30FD1003317A0 /* LaunchScreen.storyboard */,
+				B9279CC127C30FCD003317A0 /* Main.storyboard */,
 				B9279CC927C30FD1003317A0 /* Info.plist */,
 			);
 			path = MyMoviesCatalog;
-			sourceTree = "<group>";
-		};
-		B9279CCF27C32191003317A0 /* Movie */ = {
-			isa = PBXGroup;
-			children = (
-				B9279CD027C3327D003317A0 /* MovieCollectionViewCell.swift */,
-			);
-			path = Movie;
 			sourceTree = "<group>";
 		};
 		B9279CD627C3C078003317A0 /* Model */ = {
@@ -114,9 +104,35 @@
 		B9279CD927C3C343003317A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B9279CDA27C3C35F003317A0 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B9279CDC27C3DCEB003317A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9279CDA27C3C35F003317A0 /* Extensions.swift */,
+				B9279CD027C3327D003317A0 /* MovieCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9279CDD27C3DCF4003317A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9279CBF27C30FCD003317A0 /* ViewController.swift */,
+				B9279CD427C34984003317A0 /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9279CDE27C3DD2D003317A0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B9279CBD27C30FCD003317A0 /* SceneDelegate.swift */,
+				B9279CBB27C30FCD003317A0 /* AppDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		FBA68F212B3BE1490A67ED66 /* Frameworks */ = {
