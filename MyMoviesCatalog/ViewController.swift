@@ -41,35 +41,21 @@ class ViewController: UIViewController {
         collectionView.frame = view.bounds
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let dest = segue.destination as? DetailViewController, let index =
+                collectionView.indexPathsForSelectedItems?.first {
+                dest.movie = movies[index.row]
+            }
+        }
+    }
+    
     private func callToTMDB() {
         AF.request("https://api.themoviedb.org/3/trending/movie/week?api_key=8eb6c777ec4afbd830c7340eca705fd1&language=pt-BR").responseDecodable(of: MovieResponse.self){ response in
             if case .success(let result) = response.result {
                 self.movies = (result as MovieResponse).results
             }
             self.view.addSubview(self.collectionView)
-        }
-    }
-}
-
-struct Movie : Decodable {
-    let poster_path: String
-    let title: String
-    let overview: String
-    let id: Int
-    let backdrop_path: String
-}
-
-struct MovieResponse : Decodable {
-    let results: [Movie]
-}
-
-// Extensao para setar uma imagem em um UIImageView
-extension UIImageView {
-    func setImageFromURL(url: String) {
-        AF.request(url).responseImage { response in
-            if case .success(let image) = response.result {
-                self.image = image
-            }
         }
     }
 }
@@ -90,15 +76,17 @@ extension ViewController: UICollectionViewDelegate,
         }
         
         // Usando a funcao de extensao
-        let baseUrlImage = "https://image.tmdb.org/t/p/w500"
-        cell.imageView.setImageFromURL(url: baseUrlImage + self.movies[indexPath.row].poster_path)
+        cell.imageView.setImageFromURL(url: self.movies[indexPath.row].poster_path)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("item at \(indexPath.section)/\(indexPath.item) tapped")
-        showToast(controller: self, message : movies[indexPath.item].title, seconds: 2.0)
+//        print("item at \(indexPath.section)/\(indexPath.item) tapped")
+//        showToast(controller: self, message : movies[indexPath.item].title, seconds: 2.0)
+        
+        performSegue(withIdentifier: "detailSegue", sender: self)
+        
     }
     
     func showToast(controller: UIViewController, message : String, seconds: Double) {
